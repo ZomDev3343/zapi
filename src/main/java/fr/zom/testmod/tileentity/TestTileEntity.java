@@ -1,12 +1,12 @@
 package fr.zom.testmod.tileentity;
 
-import fr.zom.testmod.init.TileEntityInit;
-import fr.zom.zapi.tileentity.InventoryTileEntity;
+import fr.zom.testmod.init.ModTileEntity;
+import fr.zom.zapi.tileentity.BaseTileEntity;
 
-public class TestTileEntity extends InventoryTileEntity
+public class TestTileEntity extends BaseTileEntity
 {
 	public TestTileEntity()
 	{
-		super(TileEntityInit.apple_crate.get(), 18);
+		super(ModTileEntity.test_tile_entity, null);
 	}
 }

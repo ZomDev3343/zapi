@@ -8,18 +8,19 @@ import net.minecraft.item.ItemGroup;
 
 public class BaseArmorItem extends ArmorItem
 {
-	public BaseArmorItem(IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder)
+	public BaseArmorItem(String name, IArmorMaterial materialIn, EquipmentSlotType slot, Properties builder)
 	{
 		super(materialIn, slot, builder);
+		setRegistryName(name);
 	}
 
-	public BaseArmorItem(IArmorMaterial materialIn, EquipmentSlotType slot)
+	public BaseArmorItem(String name, IArmorMaterial materialIn, EquipmentSlotType slot)
 	{
-		super(materialIn, slot, new Item.Properties().group(ItemGroup.COMBAT));
+		this(name, materialIn, slot, new Item.Properties().group(ItemGroup.COMBAT));
 	}
 
-	public BaseArmorItem(IArmorMaterial materialIn, EquipmentSlotType slot, ItemGroup group)
+	public BaseArmorItem(String name, IArmorMaterial materialIn, EquipmentSlotType slot, ItemGroup group)
 	{
-		super(materialIn, slot, new Item.Properties().group(group));
+		this(name, materialIn, slot, new Item.Properties().group(group));
 	}
 }

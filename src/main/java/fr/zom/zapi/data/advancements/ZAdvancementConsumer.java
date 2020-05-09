@@ -7,7 +7,6 @@ import java.util.function.Consumer;
 
 public class ZAdvancementConsumer implements Consumer<Consumer<Advancement>>
 {
-	public static Advancement AUTEL_ADVANCEMENT_TEST;
 	private String modid;
 
 	public ZAdvancementConsumer(String modid)

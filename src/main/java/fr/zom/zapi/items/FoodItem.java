@@ -5,23 +5,23 @@ import net.minecraft.item.ItemGroup;
 
 public class FoodItem extends BaseItem
 {
-	public FoodItem(Properties properties)
+	public FoodItem(String name, Properties properties)
 	{
-		super(properties);
+		super(name, properties);
 	}
 
-	public FoodItem(ItemGroup group, Food food)
+	public FoodItem(String name, ItemGroup group, Food food)
 	{
-		super(new Properties().food(food).group(group));
+		this(name, new Properties().food(food).group(group));
 	}
 
-	public FoodItem(ItemGroup group, Food food, int stackSize)
+	public FoodItem(String name, ItemGroup group, Food food, int stackSize)
 	{
-		super(new Properties().group(group).food(food).maxStackSize(stackSize));
+		this(name, new Properties().group(group).food(food).maxStackSize(stackSize));
 	}
 
-	public FoodItem(Food food)
+	public FoodItem(String name, Food food)
 	{
-		this(new Properties().food(food));
+		this(name, new Properties().food(food));
 	}
 }

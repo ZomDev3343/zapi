@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import java.util.concurrent.Callable;
 import java.util.function.Supplier;
 
-public class BaseTileEntity extends TileEntity implements ITickable
+public abstract class BaseTileEntity extends TileEntity implements ITickable
 {
 
 	@Nullable

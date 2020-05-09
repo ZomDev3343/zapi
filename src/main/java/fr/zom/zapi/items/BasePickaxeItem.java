@@ -7,33 +7,34 @@ import net.minecraft.item.PickaxeItem;
 
 public class BasePickaxeItem extends PickaxeItem
 {
-	public BasePickaxeItem(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
+	public BasePickaxeItem(String name, IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
 	{
 		super(tier, attackDamageIn, attackSpeedIn, builder);
+		setRegistryName(name);
 	}
 
-	public BasePickaxeItem(IItemTier tier, float attackSpeedIn, Properties builder)
+	public BasePickaxeItem(String name, IItemTier tier, float attackSpeedIn, Properties builder)
 	{
-		super(tier, 0, attackSpeedIn, builder);
+		this(name, tier, 0, attackSpeedIn, builder);
 	}
 
-	public BasePickaxeItem(IItemTier tier, Properties builder)
+	public BasePickaxeItem(String name, IItemTier tier, Properties builder)
 	{
-		super(tier, 0, -2.8f, builder);
+		this(name, tier, 0, -2.8f, builder);
 	}
 
-	public BasePickaxeItem(IItemTier tier)
+	public BasePickaxeItem(String name, IItemTier tier)
 	{
-		this(tier, new Item.Properties().group(ItemGroup.COMBAT));
+		this(name, tier, new Item.Properties().group(ItemGroup.COMBAT));
 	}
 
-	public BasePickaxeItem(IItemTier tier, int attackDamage, float attackSpeed)
+	public BasePickaxeItem(String name, IItemTier tier, int attackDamage, float attackSpeed)
 	{
-		super(tier, attackDamage, attackSpeed, new Item.Properties().group(ItemGroup.TOOLS));
+		this(name, tier, attackDamage, attackSpeed, new Item.Properties().group(ItemGroup.TOOLS));
 	}
 
-	public BasePickaxeItem(IItemTier tier, int attackDamage, float attackSpeed, ItemGroup group)
+	public BasePickaxeItem(String name, IItemTier tier, int attackDamage, float attackSpeed, ItemGroup group)
 	{
-		super(tier, attackDamage, attackSpeed, new Item.Properties().group(group));
+		this(name, tier, attackDamage, attackSpeed, new Item.Properties().group(group));
 	}
 }

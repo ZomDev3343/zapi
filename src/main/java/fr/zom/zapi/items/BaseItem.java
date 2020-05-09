@@ -5,23 +5,24 @@ import net.minecraft.item.ItemGroup;
 
 public class BaseItem extends Item
 {
-	public BaseItem(Properties properties)
+	public BaseItem(String name, Properties properties)
 	{
 		super(properties);
+		setRegistryName(name);
 	}
 
-	public BaseItem(ItemGroup group)
+	public BaseItem(String name, ItemGroup group)
 	{
-		super(new Item.Properties().group(group));
+		this(name, new Item.Properties().group(group));
 	}
 
-	public BaseItem(ItemGroup group, int stackSize)
+	public BaseItem(String name, ItemGroup group, int stackSize)
 	{
-		super(new Item.Properties().group(group).maxStackSize(stackSize));
+		this(name, new Item.Properties().group(group).maxStackSize(stackSize));
 	}
 
-	public BaseItem()
+	public BaseItem(String name)
 	{
-		this(new Item.Properties());
+		this(name, new Item.Properties());
 	}
 }

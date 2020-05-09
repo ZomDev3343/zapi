@@ -1,6 +1,5 @@
 package fr.zom.zapi;
 
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
@@ -14,6 +13,8 @@ public interface IMod
 
 	void serverStarting(final FMLServerStartingEvent e);
 
-	void addRegistries(final IEventBus bus);
+	void registerGuis();
+
+	void registerEvents();
 
 }

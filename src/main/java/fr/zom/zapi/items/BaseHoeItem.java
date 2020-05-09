@@ -8,23 +8,24 @@ public class BaseHoeItem extends HoeItem
 {
 
 
-	public BaseHoeItem(IItemTier tier, float attackSpeedIn, Properties builder)
+	public BaseHoeItem(String name, IItemTier tier, float attackSpeedIn, Properties builder)
 	{
 		super(tier, attackSpeedIn, builder);
+		setRegistryName(name);
 	}
 
-	public BaseHoeItem(IItemTier tier, Properties builder)
+	public BaseHoeItem(String name, IItemTier tier, Properties builder)
 	{
-		super(tier, 0f, builder);
+		this(name, tier, 0f, builder);
 	}
 
-	public BaseHoeItem(IItemTier tier)
+	public BaseHoeItem(String name, IItemTier tier)
 	{
-		this(tier, new Properties().group(ItemGroup.TOOLS));
+		this(name, tier, new Properties().group(ItemGroup.TOOLS));
 	}
 
-	public BaseHoeItem(IItemTier tier, float attackSpeed, ItemGroup group)
+	public BaseHoeItem(String name, IItemTier tier, float attackSpeed, ItemGroup group)
 	{
-		super(tier, attackSpeed, new Properties().group(group));
+		this(name, tier, attackSpeed, new Properties().group(group));
 	}
 }

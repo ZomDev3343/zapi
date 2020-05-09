@@ -6,33 +6,34 @@ import net.minecraft.item.ItemGroup;
 
 public class BaseShoveltem extends AxeItem
 {
-	public BaseShoveltem(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
+	public BaseShoveltem(String name, IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
 	{
 		super(tier, attackDamageIn, attackSpeedIn, builder);
+		setRegistryName(name);
 	}
 
-	public BaseShoveltem(IItemTier tier, float attackSpeedIn, Properties builder)
+	public BaseShoveltem(String name, IItemTier tier, float attackSpeedIn, Properties builder)
 	{
-		super(tier, 0, attackSpeedIn, builder);
+		this(name, tier, 0, attackSpeedIn, builder);
 	}
 
-	public BaseShoveltem(IItemTier tier, Properties builder)
+	public BaseShoveltem(String name, IItemTier tier, Properties builder)
 	{
-		super(tier, 0, -2.8f, builder);
+		this(name, tier, 0, -2.8f, builder);
 	}
 
-	public BaseShoveltem(IItemTier tier)
+	public BaseShoveltem(String name, IItemTier tier)
 	{
-		this(tier, new Properties().group(ItemGroup.TOOLS));
+		this(name, tier, new Properties().group(ItemGroup.TOOLS));
 	}
 
-	public BaseShoveltem(IItemTier tier, int attackDamage, float attackSpeed)
+	public BaseShoveltem(String name, IItemTier tier, int attackDamage, float attackSpeed)
 	{
-		super(tier, attackDamage, attackSpeed, new Properties().group(ItemGroup.TOOLS));
+		this(name, tier, attackDamage, attackSpeed, new Properties().group(ItemGroup.TOOLS));
 	}
 
-	public BaseShoveltem(IItemTier tier, int attackDamage, float attackSpeed, ItemGroup group)
+	public BaseShoveltem(String name, IItemTier tier, int attackDamage, float attackSpeed, ItemGroup group)
 	{
-		super(tier, attackDamage, attackSpeed, new Properties().group(group));
+		this(name, tier, attackDamage, attackSpeed, new Properties().group(group));
 	}
 }

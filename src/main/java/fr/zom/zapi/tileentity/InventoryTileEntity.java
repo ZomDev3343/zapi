@@ -13,11 +13,10 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import java.util.concurrent.Callable;
 import java.util.function.Supplier;
 
-public class InventoryTileEntity extends LockableTileEntity
+public abstract class InventoryTileEntity extends LockableTileEntity
 {
 
 	private int inventorySize;
@@ -27,15 +26,15 @@ public class InventoryTileEntity extends LockableTileEntity
 
 	public InventoryTileEntity(TileEntityType<?> tileEntityTypeIn, Supplier<Callable<Void>> tickFunction)
 	{
-		this(tileEntityTypeIn, 9, tickFunction, "");
+		this(tileEntityTypeIn, 9, "");
 	}
 
-	public InventoryTileEntity(TileEntityType<?> tileEntityTypeIn, int slots, @Nullable Supplier<Callable<Void>> tickFunction, String nameKey)
+	public InventoryTileEntity(TileEntityType<?> tileEntityTypeIn, int inventorySize, String nameKey)
 	{
 		super(tileEntityTypeIn);
-		this.inventorySize = slots;
+		this.inventorySize = inventorySize;
 		this.nameKey = nameKey;
-		this.inventory = NonNullList.withSize(slots, ItemStack.EMPTY);
+		this.inventory = NonNullList.withSize(inventorySize, ItemStack.EMPTY);
 	}
 
 	@Override

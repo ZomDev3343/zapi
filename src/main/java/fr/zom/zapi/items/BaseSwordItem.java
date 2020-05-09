@@ -7,33 +7,34 @@ import net.minecraft.item.SwordItem;
 
 public class BaseSwordItem extends SwordItem
 {
-	public BaseSwordItem(IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
+	public BaseSwordItem(String name, IItemTier tier, int attackDamageIn, float attackSpeedIn, Properties builder)
 	{
 		super(tier, attackDamageIn, attackSpeedIn, builder);
+		setRegistryName(name);
 	}
 
-	public BaseSwordItem(IItemTier tier, float attackSpeedIn, Properties builder)
+	public BaseSwordItem(String name, IItemTier tier, float attackSpeedIn, Properties builder)
 	{
-		super(tier, 0, attackSpeedIn, builder);
+		this(name, tier, 0, attackSpeedIn, builder);
 	}
 
-	public BaseSwordItem(IItemTier tier, Properties builder)
+	public BaseSwordItem(String name, IItemTier tier, Properties builder)
 	{
-		super(tier, 0, -2.4f, builder);
+		this(name, tier, 0, -2.4f, builder);
 	}
 
-	public BaseSwordItem(IItemTier tier)
+	public BaseSwordItem(String name, IItemTier tier)
 	{
-		this(tier, new Item.Properties().group(ItemGroup.COMBAT));
+		this(name, tier, new Item.Properties().group(ItemGroup.COMBAT));
 	}
 
-	public BaseSwordItem(IItemTier tier, int attackDamage, float attackSpeed)
+	public BaseSwordItem(String name, IItemTier tier, int attackDamage, float attackSpeed)
 	{
-		super(tier, attackDamage, attackSpeed, new Item.Properties().group(ItemGroup.COMBAT));
+		this(name, tier, attackDamage, attackSpeed, new Item.Properties().group(ItemGroup.COMBAT));
 	}
 
-	public BaseSwordItem(IItemTier tier, int attackDamage, float attackSpeed, ItemGroup group)
+	public BaseSwordItem(String name, IItemTier tier, int attackDamage, float attackSpeed, ItemGroup group)
 	{
-		super(tier, attackDamage, attackSpeed, new Item.Properties().group(group));
+		this(name, tier, attackDamage, attackSpeed, new Item.Properties().group(group));
 	}
 }

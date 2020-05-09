@@ -10,19 +10,14 @@ import net.minecraftforge.common.ToolType;
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
-public class BaseTileEntityBlock extends BaseBlock
+public abstract class BaseTileEntityBlock extends BaseBlock
 {
 
 	protected Supplier<? extends TileEntity> tileEntity;
 
-	public BaseTileEntityBlock(Properties properties)
+	public BaseTileEntityBlock(String name, Supplier<? extends TileEntity> tileEntity, Material material, float hardness, float resistance, int harvestLevel, ToolType harvestTool, SoundType soundType)
 	{
-		super(properties);
-	}
-
-	public BaseTileEntityBlock(Supplier<? extends TileEntity> tileEntity, Material material, float hardness, float resistance, int harvestLevel, ToolType harvestTool, SoundType soundType)
-	{
-		super(material, hardness, resistance, harvestLevel, harvestTool, soundType);
+		super(name, material, hardness, resistance, harvestLevel, harvestTool, soundType);
 		this.tileEntity = tileEntity;
 	}
 
